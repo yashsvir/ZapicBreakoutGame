@@ -5,7 +5,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour {
 
     private GameObject _parentObject;
-    private float _roateSpeed = 5;
+    private float _roateSpeed = 0;
     private bool _isRotating = false;
 
     void Start()
@@ -17,6 +17,10 @@ public class InputManager : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             _isRotating = true;
+
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.x -= Screen.width / 2;
+            _roateSpeed = mousePos.x > 0 ? 50f : -50f;
         }
         else if (Input.GetMouseButtonUp(0))
         {
@@ -25,7 +29,7 @@ public class InputManager : MonoBehaviour {
 
         if (_isRotating)
         {
-            _parentObject.transform.Rotate(new Vector3(0, 0, 1));
+            _parentObject.transform.Rotate(new Vector3(0, 0, _roateSpeed*Time.deltaTime));
         }
     }
 }
