@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Zapic/Examples/MenuDemo.unity
+- path: Assets/Scenes/GameYashi.unity
   isLoaded: 1
   isActive: 1
