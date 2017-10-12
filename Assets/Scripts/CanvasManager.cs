@@ -21,6 +21,9 @@ public class CanvasManager : MonoBehaviour {
 
         _gameStatus = GameObject.Find("GameStatus").GetComponent<Text>();
         _gameStatus.text = "";
+
+
+        //Zapic.Start(""1.0.3");
     }
 
     public void AddScore()
@@ -34,12 +37,19 @@ public class CanvasManager : MonoBehaviour {
         if (_score == GameSettings.brickCount)
             Victory();
 
+        /*
+         *if(_score ==16) 
+               Zapic.SubmitEvent(GameSettings.LevelName+"LevelCompleted");
+         
+         */
+
     }
 
     public void GameOver()
     {
         _gameStatus.text = "Game Over!";
-        PlayerPrefs.SetInt("score", _score);
+        if(_score >= _bestScore)
+            PlayerPrefs.SetInt("score", _score);
         GameSettings.gameState = EnumTypes.GameState.FinishedMode;
         StartCoroutine(BackToMenu());
     }

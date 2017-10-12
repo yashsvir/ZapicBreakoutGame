@@ -3,8 +3,8 @@
 
     public static int numberOfWalls = 8;
 
-    public static float radiusZoneOne = 5.5f;
-    public static float radiusZoneTwo = 8.1f;
+    public static float radiusZoneOne = 5.6f;
+    public static float radiusZoneTwo = 8.4f;
 
     public static float rotatingSpeed = 50;
 
