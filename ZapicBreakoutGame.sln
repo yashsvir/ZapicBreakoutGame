@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZapicBreakoutGame.CSharp", "ZapicBreakoutGame.CSharp.csproj", "{050B00B3-FB57-B106-3B40-561366F0A658}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZapicBreakoutGame.CSharp.Editor", "ZapicBreakoutGame.CSharp.Editor.csproj", "{F55B91D9-C6CB-194A-FE16-A2B023179C81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{050B00B3-FB57-B106-3B40-561366F0A658}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{050B00B3-FB57-B106-3B40-561366F0A658}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{050B00B3-FB57-B106-3B40-561366F0A658}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F55B91D9-C6CB-194A-FE16-A2B023179C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F55B91D9-C6CB-194A-FE16-A2B023179C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F55B91D9-C6CB-194A-FE16-A2B023179C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F55B91D9-C6CB-194A-FE16-A2B023179C81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

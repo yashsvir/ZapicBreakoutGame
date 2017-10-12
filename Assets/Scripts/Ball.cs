@@ -31,6 +31,7 @@ public class Ball : MonoBehaviour {
         _ll.Reset();
         _cm.Reset();
 
+        transform.position = new Vector3(0, 0, 0);
         _rb.velocity = new Vector3(0,0,0);
         transform.position = new Vector3(0, 0, 0);
         _initialBallAngle = UnityEngine.Random.Range(0, 360);
@@ -61,7 +62,8 @@ public class Ball : MonoBehaviour {
 
     private void GameOver()
     {
-        _cm.GameOver();
+        if(GameSettings.gameState == EnumTypes.GameState.PlayMode)
+            _cm.GameOver();
     }
 
     private IEnumerator FireBall()
