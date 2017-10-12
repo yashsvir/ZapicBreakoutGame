@@ -5,24 +5,42 @@ using System.Linq;
 
 public class LevelLoader : MonoBehaviour {
 
-    private int _numberOfWalls = 8;
     private float _angleDiff;
-    private float _radius = 8.2f;
+    private float _radius = 0;
     private GameObject[] _prefabs;
     private GameObject _parentObject;
     
     void Start()
     {
-        _parentObject = GameObject.Find( "BrickObject" );
-        _angleDiff = 360/_numberOfWalls;
+        // Reset();
+        _parentObject = GameObject.Find("BrickObject");
+        _angleDiff = 360 / GameSettings.numberOfWalls;
+        _prefabs = (Resources.LoadAll("GameObjects", typeof(GameObject))).Cast<GameObject>().ToArray();
+
+    }
+
+    public void Reset()
+    {
+        foreach (Transform child in _parentObject.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        StartCoroutine(LoadLevel());
+    }
+
+    IEnumerator LoadLevel() {
+        
+        while(GameSettings.gameState != EnumTypes.GameState.PlayMode)
+        {
+            yield return null;
+        }
         Vector3 center = transform.position;
-        _prefabs =(Resources.LoadAll("GameObjects", typeof(GameObject))).Cast<GameObject>().ToArray();
         bool bSwitchWall = false;
 
         for (int zone = 1; zone < 3; zone++)
         {
             ChangeRadius(zone);
-            for (int i = 0; i < _numberOfWalls; i++)
+            for (int i = 0; i < GameSettings.numberOfWalls; i++)
             {
                 float angle = i * _angleDiff;
                 Vector3 pos;
@@ -43,23 +61,23 @@ public class LevelLoader : MonoBehaviour {
                 }
                 temp.transform.localScale = new Vector3(0, 0, 0);
                 temp.transform.parent = _parentObject.transform;
-                temp.GetComponent<WallScript>().SetTime(i*0.2f);
+                temp.GetComponent<WallScript>().SetTime(i * 0.2f);
                 temp.GetComponent<WallScript>().SetZone(zone);
             }
             bSwitchWall = !bSwitchWall;
         }
-        
+
     }
 
     void ChangeRadius(int zone)
     {
         if (zone == 1)
         {
-            _radius = 5.5f;
+            _radius = GameSettings.radiusZoneOne;
         }
         else if (zone == 2)
         {
-            _radius = 8.1f;
+            _radius = GameSettings.radiusZoneTwo;
         }
     }
 

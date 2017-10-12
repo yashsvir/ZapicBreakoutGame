@@ -6,13 +6,10 @@ using UnityEngine;
 public class WallScript : MonoBehaviour {
 
     private float scale = 0;
-    private float incrementFactor = 200f;
     private int _maxScale = 0;
     private float _delayTime = 0;
-    void Awake()
-    {
-      
-    }
+    
+
     public void SetTime(float iTime)
     {
         _delayTime = iTime;
@@ -37,7 +34,7 @@ public class WallScript : MonoBehaviour {
     {
         yield return new WaitForSeconds(_delayTime);
         while (scale < _maxScale) {
-            scale += incrementFactor * Time.deltaTime;
+            scale += GameSettings.wallIncrementFactor * Time.deltaTime;
             transform.localScale = new Vector3(scale, scale, 100);
             yield return null;
         }

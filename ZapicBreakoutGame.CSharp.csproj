@@ -79,8 +79,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Ball.cs" />
+    <Compile Include="Assets\Scripts\CanvasManager.cs" />
+    <Compile Include="Assets\Scripts\Enums\EnumTypes.cs" />
+    <Compile Include="Assets\Scripts\GameSettings.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
     <Compile Include="Assets\Scripts\LevelLoader.cs" />
+    <Compile Include="Assets\Scripts\SelfDestructParticle.cs" />
     <Compile Include="Assets\Scripts\WallScript.cs" />
     <Compile Include="Assets\Zapic\Examples\ExampleStartup.cs" />
     <Compile Include="Assets\Zapic\Views.cs" />
