@@ -10,7 +10,7 @@
 
     public static float initalBallVelocity = 300f;
 
-    public static float gameRange = 12;
+    public static float gameRange = 14;
 
     public static float initalWait = 2;
 

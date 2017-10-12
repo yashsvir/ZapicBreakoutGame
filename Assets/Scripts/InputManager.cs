@@ -38,7 +38,6 @@ public class InputManager : MonoBehaviour {
 
     public void BeginGame()
     {
-        
         GameSettings.gameState = EnumTypes.GameState.PlayMode;
         Camera.main.transform.Rotate(0, 180, 0);
         _ball.Reset();
