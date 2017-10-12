@@ -13,7 +13,7 @@ public class LevelLoader : MonoBehaviour {
     
     void Start()
     {
-        _parentObject = GameObject.Find( "GameObject" );
+        _parentObject = GameObject.Find( "BrickObject" );
         _angleDiff = 360/_numberOfWalls;
         Vector3 center = transform.position;
         _prefabs =(Resources.LoadAll("GameObjects", typeof(GameObject))).Cast<GameObject>().ToArray();

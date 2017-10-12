@@ -10,7 +10,7 @@ public class InputManager : MonoBehaviour {
 
     void Start()
     {
-        _parentObject = GameObject.Find("GameObject");
+        _parentObject = GameObject.Find("BrickObject");
     }
     void Update() {
 
@@ -20,7 +20,7 @@ public class InputManager : MonoBehaviour {
 
             Vector3 mousePos = Input.mousePosition;
             mousePos.x -= Screen.width / 2;
-            _roateSpeed = mousePos.x > 0 ? 50f : -50f;
+            _roateSpeed = mousePos.x > 0 ? -50f : 50f;
         }
         else if (Input.GetMouseButtonUp(0))
         {
